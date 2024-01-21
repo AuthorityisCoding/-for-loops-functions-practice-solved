@@ -6,7 +6,27 @@
 
 export function getClientWithLeastPositiveBalance(array) {
   // Your code goes here...
-  
+  const clientWithBalance = [];
+  const clientWithLeastPositiveBalance = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].balance > 0) {
+      clientWithBalance.push(array[i]);
+    }
+  }
+  if (clientWithBalance[0]) {
+    clientWithLeastPositiveBalance.push(clientWithBalance[0]);
+  }
+  for (let i = 1; i < clientWithBalance.length; i++) {
+    if (clientWithBalance[i].balance < clientWithBalance[i - 1].balance) {
+      clientWithLeastPositiveBalance.length = 0;
+      clientWithLeastPositiveBalance.push(clientWithBalance[i]);
+    }
+    else if (clientWithBalance[i].balance == clientWithBalance[i - 1].balance) {
+      clientWithLeastPositiveBalance.push(clientWithBalance[i]);
+    }
+    
+  }
+  return clientWithLeastPositiveBalance;
 }
 
 // === TEST YOURSELF ===

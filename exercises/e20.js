@@ -7,7 +7,23 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
-
+  const separateNamesWithAFromRest = [[],[]];
+  const separateNamesToLetters = [];
+  for (let i = 0; i < array.length; i++) {
+    separateNamesToLetters.push(Array.from(array[i]));
+    for (let l = 0; l < separateNamesToLetters[i].length; l++) {
+      if (separateNamesToLetters[i][l] == 'a') {
+        separateNamesToLetters[i] = true;
+      }
+    }
+    if (separateNamesToLetters[i] == true) {
+      separateNamesWithAFromRest[0].push(array[i]);
+    }
+    else {
+      separateNamesWithAFromRest[1].push(array[i]);
+    }
+  }
+  return separateNamesWithAFromRest;
 }
 
 

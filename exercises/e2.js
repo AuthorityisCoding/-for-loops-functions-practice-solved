@@ -4,7 +4,14 @@
 
 export function getNumbersWithSquareRoots(max) {
   // Your code goes here...
-
+  const root = [];
+  for (let i = 0; i < max; i++) {
+    const square = i * i;
+    if (square < max) {
+      root.push(square);
+    }
+  }
+  return root;
 }
 
 // === TEST YOURSELF ===
